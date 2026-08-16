@@ -310,7 +310,7 @@ input {
 
 @media (max-width: 760px) {
   .app-shell {
-    padding-top: 60px;
+    padding-top: 52px;
   }
 
   .vibe-sidebar {
@@ -319,15 +319,44 @@ input {
     width: auto;
   }
 
+  .player-panel {
+    left: 12px;
+    right: 12px;
+    width: auto;
+    bottom: 10px;
+    transform: none;
+    justify-content: stretch;
+  }
+
   .player-card {
-    width: min(100%, 420px);
+    width: 100%;
+    max-width: 100%;
+    padding: 10px 10px 8px;
+    border-radius: 14px;
   }
 
   .player-header {
     flex-direction: column;
+    gap: 6px;
   }
 
   .tag {
+    max-width: 100%;
     text-align: left;
+    font-size: 0.5rem;
+  }
+
+  .track-info h3 {
+    font-size: 0.82rem;
+    line-height: 1.1;
+  }
+
+  .controls-row {
+    gap: 12px;
+  }
+
+  .play-button {
+    width: 36px;
+    height: 36px;
   }
 }
