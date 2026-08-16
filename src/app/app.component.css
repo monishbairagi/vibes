@@ -180,7 +180,7 @@ input {
 .player-panel {
   position: absolute;
   left: 50%;
-  bottom: 32px;
+  bottom: 22px;
   transform: translateX(-50%);
   width: 100%;
   display: flex;
@@ -191,14 +191,16 @@ input {
 
 .player-card {
   width: min(520px, 82vw);
+  min-height: 0;
   background: rgba(18, 20, 30, 0.18);
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 18px;
-  padding: 10px 12px 9px;
+  padding: 8px 12px 7px;
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255,255,255,0.14);
   backdrop-filter: blur(18px) saturate(140%);
   -webkit-backdrop-filter: blur(18px) saturate(140%);
   pointer-events: auto;
+  transform: translateY(-10px);
 }
 
 .player-header {
@@ -211,12 +213,12 @@ input {
 
 .tag {
   max-width: 170px;
-  padding: 5px 8px;
+  padding: 4px 7px;
   background: rgba(255, 255, 255, 0.07);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 999px;
-  font-size: 0.54rem;
-  line-height: 1.3;
+  font-size: 0.52rem;
+  line-height: 1.2;
   text-align: right;
   color: rgba(255, 255, 255, 0.8);
 }
@@ -226,21 +228,21 @@ input {
 }
 
 .track-label {
-  margin: 0 0 3px;
-  font-size: 0.5rem;
+  margin: 0 0 2px;
+  font-size: 0.48rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   opacity: 0.8;
 }
 
 .track-info h3 {
-  font-size: clamp(0.82rem, 1.25vw, 1rem);
-  line-height: 1.2;
+  font-size: clamp(0.74rem, 1.1vw, 0.9rem);
+  line-height: 1.15;
   letter-spacing: 0.01em;
 }
 
 .progress-wrap {
-  margin-bottom: 7px;
+  margin-bottom: 6px;
 }
 
 .progress-wrap input,
@@ -253,8 +255,8 @@ input {
 .time-row {
   display: flex;
   justify-content: space-between;
-  margin-top: 4px;
-  font-size: 0.66rem;
+  margin-top: 3px;
+  font-size: 0.62rem;
   opacity: 0.8;
 }
 
@@ -263,11 +265,11 @@ input {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .controls-row {
-  margin-bottom: 6px;
+  margin-bottom: 5px;
 }
 
 .icon-button,
@@ -286,20 +288,20 @@ input {
 }
 
 .icon-button {
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  font-size: 0.72rem;
+  font-size: 0.68rem;
 }
 
 .play-button {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background: linear-gradient(135deg, rgba(255, 159, 67, 0.92), rgba(255, 77, 109, 0.92));
-  font-size: 0.9rem;
+  font-size: 0.84rem;
   box-shadow: 0 10px 18px rgba(255, 114, 94, 0.3), inset 0 1px 0 rgba(255,255,255,0.3);
 }
 
@@ -336,7 +338,7 @@ input {
     left: 12px;
     right: 12px;
     width: auto;
-    bottom: 10px;
+    bottom: 8px;
     transform: none;
     justify-content: stretch;
   }
@@ -344,20 +346,21 @@ input {
   .player-card {
     width: 100%;
     max-width: 100%;
-    padding: 9px 10px 8px;
+    padding: 8px 10px 7px;
     border-radius: 14px;
+    transform: translateY(-8px);
   }
 
   .player-header {
     flex-direction: column;
     align-items: flex-start;
-    gap: 5px;
+    gap: 4px;
   }
 
   .tag {
     max-width: 100%;
     text-align: left;
-    font-size: 0.48rem;
+    font-size: 0.46rem;
   }
 
   .track-label {
@@ -365,21 +368,21 @@ input {
   }
 
   .track-info h3 {
-    font-size: 0.78rem;
-    line-height: 1.12;
+    font-size: 0.74rem;
+    line-height: 1.1;
   }
 
   .controls-row {
-    gap: 12px;
+    gap: 10px;
   }
 
   .icon-button {
-    width: 26px;
-    height: 26px;
+    width: 24px;
+    height: 24px;
   }
 
   .play-button {
-    width: 36px;
-    height: 36px;
+    width: 34px;
+    height: 34px;
   }
 }
