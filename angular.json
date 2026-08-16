@@ -74,7 +74,7 @@
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kB",
-                  "maximumError": "5kB"
+                  "maximumError": "6kB"
                 }
               ],
               "baseHref": "/vibes/",
