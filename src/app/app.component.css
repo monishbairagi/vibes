@@ -200,7 +200,7 @@ input {
   backdrop-filter: blur(18px) saturate(140%);
   -webkit-backdrop-filter: blur(18px) saturate(140%);
   pointer-events: auto;
-  transform: translateY(-35px);
+  transform: translateY(-8px);
 }
 
 .player-header {
@@ -348,7 +348,7 @@ input {
     max-width: 100%;
     padding: 8px 10px 7px;
     border-radius: 14px;
-    transform: translateY(-35px);
+    transform: translateY(-60px);
   }
 
   .player-header {
