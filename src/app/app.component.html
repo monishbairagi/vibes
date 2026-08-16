@@ -1,0 +1,97 @@
+﻿<div class="app-shell" [ngStyle]="{ 'background-image': isVideoBackground ? 'none' : backgroundStyle }">
+  <video
+    *ngIf="isVideoBackground"
+    class="background-video"
+    [src]="assetUrl('images/' + currentBackground)"
+    autoplay
+    muted
+    loop
+    playsinline
+    disablepictureinpicture
+    webkit-playsinline
+    preload="auto"
+  ></video>
+  <div class="vibe-overlay"></div>
+
+  <aside class="vibe-sidebar" aria-label="Choose vibe">
+    <button type="button" class="vibe-toggle" aria-label="Open vibe chooser">Vibes</button>
+
+    <div class="vibe-panel">
+      <div class="brand-block">
+        <p class="eyebrow">VibeFlow</p>
+        <h1>Choose your vibe</h1>
+      </div>
+
+      <div class="vibe-list">
+        <button
+          *ngFor="let vibe of vibes"
+          type="button"
+          class="vibe-button"
+          [class.active]="selectedVibe.id === vibe.id"
+          (click)="selectVibe(vibe.id)"
+        >
+          <span class="vibe-name">{{ vibe.name }}</span>
+          <span class="vibe-meta">{{ vibe.songs.length }} tracks</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <main class="player-panel">
+    <div class="player-card">
+      <div class="player-header">
+        <div>
+          <p class="eyebrow">Now playing</p>
+          <h2>{{ selectedVibe.name }}</h2>
+        </div>
+        <span class="tag">{{ selectedVibe.description }}</span>
+      </div>
+
+      <div class="track-info">
+        <p class="track-label">Current track</p>
+        <h3>{{ currentSong.title }}</h3>
+      </div>
+
+      <div class="progress-wrap">
+        <input
+          type="range"
+          min="0"
+          [max]="duration || 0"
+          [value]="currentTime"
+          (input)="seekSong($event)"
+          aria-label="Track progress"
+        />
+        <div class="time-row">
+          <span>{{ formatTime(currentTime) }}</span>
+          <span>{{ formatTime(duration) }}</span>
+        </div>
+      </div>
+
+      <div class="controls-row">
+        <button type="button" class="icon-button" (click)="previousTrack()" aria-label="Previous track">
+          ⏮
+        </button>
+        <button type="button" class="play-button" (click)="togglePlay()" aria-label="Play or pause">
+          {{ isPlaying ? '❚❚' : '▶' }}
+        </button>
+        <button type="button" class="icon-button" (click)="nextTrack()" aria-label="Next track">
+          ⏭
+        </button>
+      </div>
+
+      <div class="volume-row">
+        <button type="button" class="mute-button" (click)="toggleMute()" aria-label="Mute or unmute">
+          {{ isMuted ? '🔇' : '🔊' }}
+        </button>
+        <input
+          type="range"
+          min="0"
+          max="100"
+          [value]="volumePercent"
+          (input)="onVolumeChange($event)"
+          aria-label="Volume control"
+        />
+      </div>
+    </div>
+  </main>
+</div>
